@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+        <div class="mainBox">
+        <h1>ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧</h1>
+        <ul class="metanav" >
+           <li><a href="../">Home</a></li>
+           <li><a href="../twitter">Twitter</a></li>
+           <li><a href="../facebook">Facebook</a></li>
+           <li><a href="../about">About</a></li>
+           <li><a href="../contact">Contact</a></li>
+        </ul>
+        <br>
+        <br>
+        <table class="table" height="100px">
+        {% for profile in profiles %}
+            <tr height="100px">
+            <td><img src="{{ profile.profile_image_url }}" height=50px></td>
+            <td>
+                <div class="tweets_name">{{ profile.name}}</div>
+                <div class="tweets_id">@{{ profile.screen_name }}</div>
+            </td>
+            <td><div class="tweets_text">{{ profile.description}}</div></td>
+            </tr>
+            <tr>
+            <td>
+            {% for word in words[i] %}
+            <div class="tweets_text">{{ word }}</div>
+            {% endfor %}
+            </td>
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+{% endblock %}

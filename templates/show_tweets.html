@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+        <div class="mainBox">
+        <h1>ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧ヽ(•̀﹏•́ )ゝ✧</h1>
+        <ul class="metanav" >
+           <li><a href="../">Home</a></li>
+           <li><a href="../twitter">Twitter</a></li>
+           <li><a href="../facebook">Facebook</a></li>
+           <li><a href="../about">About</a></li>
+           <li><a href="../contact">Contact</a></li>
+        </ul>
+        <br>
+        <br>
+        <div class="tweets_profiles">
+            <img src="{{ profiles['image'] }}" width=100px><br>
+            <h3>{{ profiles['name'] }}</h3>
+            {{ profiles['description'] }}
+        </div>
+        <br>
+        <br>
+        <table class="table" height="100px">
+        {% for i in range(0,15) %}
+            <tr height="100px">
+            <td><img src="{{ tweets[i].author.profile_image_url }}" height=50px></td>
+            <td>
+                <div class="tweets_name">{{ tweets[i].author.name}}</div>
+                <div class="tweets_id">@{{ tweets[i].author.screen_name }}</div>
+            </td>
+            <td><div class="tweets_text">{{ tweets[i].text}}</div></td>
+            </tr>
+            <tr>
+            <td>
+            {% for word in words[i] %}
+            <div class="tweets_text">{{ word }}</div>
+            {% endfor %}
+            </td>
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+{% endblock %}

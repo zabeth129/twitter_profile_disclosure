@@ -1,0 +1,32 @@
+やること
+・プロフィールを形態素解析→　tf-idfで重要ワードを抽出、固有名詞をランクづけ
+・ネットワーク化、　胸痛のフォロワーが多い場合→　単語の重みを増加
+
+フォローしているユーザーのプロフィール
+各ユーザーのつながりをリスト形式で保存
+　既存ユーザー flagに1を追加
+　新規ユーザー　flagに1を追加
+
+主ユーザー to フォローユーザーのふぁぼ数、ふぁぼのid
+主ユーザー to フォローユーザーのリツイート、リツイートのid
+
+users
+  id int 
+  profile varchar(511)
+  email
+  password
+  belonging varchar(255)
+
+tweets
+  id
+
+favorite
+  id int
+  user_id int foreign_key
+  favor user_id
+  tweets
+
+
+
+固有名詞対策:　WikipediaのタイトルをMeCab辞書に登録
+
