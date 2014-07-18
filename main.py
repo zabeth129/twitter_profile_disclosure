@@ -3,15 +3,15 @@
 __author__ = 'masaru'
 
 import sys
-import db
-from twitter_functions import
+# import db
+import twitter_functions as twi_func
 from flask import Flask, request, render_template, jsonify
 from flask_bootstrap import Bootstrap
 
 sys.path.append('/template')
 
 
-api = db.api
+api = twi_func.authentication()
 app = Flask(__name__)
 Bootstrap(app)
 
@@ -65,5 +65,5 @@ def check_func():
 
 
 if __name__=="__main__":
-    #app.run(host="0.0.0.0", port=80, debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)
     app.run(debug=True)
