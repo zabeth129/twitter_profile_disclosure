@@ -87,54 +87,19 @@ def multiply_friends_weight(word_scores, friends_weight, each_friend_words):
             continue
         for word in each_friend_words[name]:
             if word in word_scores.keys():
-                word_scores[word] *= 1.2*friends_weight[name]  # 親密なユーザーの重みを決める
+                word_scores[word] *= 1.1*friends_weight[name]  # 親密なユーザーの重みを決める
     return word_scores
-
-
-def show_results(word_scores):
-    #ランキング上位ワードの部分的重複を削除
-    del_list = []
-    results = []
-    for word, score in word_scores.items():
-        results.append([word, score])
-    results = sorted(results, key=lambda x:x[1], reverse=True)
-    word_list = [result[0] for result in results]
-
-    #for result in results[:10]:
-    #    print result[0], result[1]
-
-    check = [results[0]]
-    checked_words = [check[0][0].lower()]
-    #print checked_words
-    for result in results[1:30]:
-        flag = 0
-        for word in checked_words:
-            if result[0].lower() in word:
-                flag = 1
-                break
-        if flag == 1:
-            continue
-
-        #print result
-        check.append(result)
-        checked_words.append(result[0].lower())
-
-    for checked in check[:10]:
-        print checked[0]
 
 
 def rm_duplicate_return_top10(word_scores):
     #ランキング上位ワードの部分的重複を削除
-    del_list = []
     results = []
     for word, score in word_scores.items():
         results.append([word, score])
     results = sorted(results, key=lambda x:x[1], reverse=True)
-    word_list = [result[0] for result in results]
 
-    check = [results[0]]
-    checked_words = [check[0][0].lower()]
-    #print checked_words
+    final_results = [results[0]]
+    checked_words = [final_results[0][0].lower()]
     for result in results[1:30]:
         flag = 0
         for word in checked_words:
@@ -144,10 +109,14 @@ def rm_duplicate_return_top10(word_scores):
         if flag == 1:
             continue
 
-        check.append(result)
+        final_results.append(result)
         checked_words.append(result[0].lower())
+        if len(final_results) > 9:
+            for result in final_results:
+                result[0] = result[0].decode('utf-8')  # flaskで表示するため
+            break
 
-    return check[:10]
+    return final_results
 
 
 def disclose_profile(api, screen_name):
@@ -163,6 +132,7 @@ def main():
     api = authentication()
     screen_name = 'ru_pe129'
 
+    """
     print "==========loading data==========="
     profiles = get_friends_profiles(api, screen_name)
     friends_weight = get_close_friends(api, screen_name)
@@ -173,8 +143,11 @@ def main():
     word_scores = multiply_friends_weight(word_scores, friends_weight, each_friend_words)
 
     print "==============results=============="
-
     show_results(word_scores)
+    """
+    results = disclose_profile(api, screen_name)
+    for result in results:
+        print result[0], result[1]
 
 if __name__ == "__main__":
     main()

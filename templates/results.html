@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+{{screen_name}}さんのプロフィールはこちら！ <br>
+<table class="table">
+  <tr>
+    <th>キーワード</th>
+    <th>スコア</th>
+  </tr>
+  {% for result in results %}
+  <tr>
+    <td>{{ result[0] }}</td>
+    <td>{{ result[1] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
