@@ -1,13 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-  {% if message %}
-  <h3 style="color:red;">Twitter IDを入力してください</ID></h3>
-  {% else %}
-  <h3 style="color:black;">Twitter IDを入力してください</ID></h3>
-  {% endif %}
-  <form method="post">
-    <h4>{{ form.screen_name }}</h4>
-    <button type="submit" class="btn btn-default" value="analyze" name="execute">分析開始！！</button>
-  </form>
+{% if g.user %}
+    <p>
+      Hello {{ g.user.name }}!  Wanna tweet something?
+    <form action="{{ url_for('tweet') }}"  method=post>
+      <p>
+        <input type=text name=tweet size=40>
+        <input type=submit value="Tweet!">
+    </form>
 
+  {% else %}
+    <a href="{{ url_for('login') }}" alt="sign in"><button class="btn btn-default">使ってみる</button></a>
+  {% endif %}
 {% endblock %}

@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c9234c5-fb45-4112-8ccc-56431e78bec2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/about.html" afterPath="$PROJECT_DIR$/templates/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/contact.html" afterPath="$PROJECT_DIR$/templates/contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/analyze.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp_functions.py" afterPath="$PROJECT_DIR$/nlp_functions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitter_functions.py" afterPath="$PROJECT_DIR$/twitter_functions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="profile_disclosure.iws" />
@@ -38,16 +31,36 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="93" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="954">
+            <state line="19" column="20" selection-start="549" selection-end="549" vertical-scroll-proportion="5.8846154" vertical-offset="648" max-vertical-offset="3510">
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="13" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <file leaf-file-name="scoping.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/scoping.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.13211009" vertical-offset="0" max-vertical-offset="545">
+            <state line="103" column="8" selection-start="3739" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="3222">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account_info.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/account_info.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="23" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
               <folding />
             </state>
           </provider>
@@ -56,7 +69,7 @@
       <file leaf-file-name="results.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="414">
+            <state line="2" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="414">
               <folding />
             </state>
           </provider>
@@ -65,10 +78,8 @@
       <file leaf-file-name="twitter_functions.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/twitter_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="19" selection-start="4330" selection-end="4330" vertical-scroll-proportion="-2.1851852" vertical-offset="2317" max-vertical-offset="2862">
-              <folding>
-                <element signature="e#47#74#0" expanded="true" />
-              </folding>
+            <state line="18" column="0" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2808">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,48 +87,26 @@
       <file leaf-file-name="nlp_functions.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nlp_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="47" selection-start="2960" selection-end="2961" vertical-scroll-proportion="-6.703704" vertical-offset="971" max-vertical-offset="3420">
+            <state line="102" column="27" selection-start="3828" selection-end="3828" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="3420">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="0" selection-end="143" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="234">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/contact.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="18" selection-start="0" selection-end="238" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="342">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="396">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="15" selection-start="63" selection-end="63" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="342">
-              <folding>
-                <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
-                <marker date="1405741334182" expanded="true" signature="227:370" placeholder="..." />
-              </folding>
+            <state line="2" column="12" selection-start="60" selection-end="60" vertical-scroll-proportion="0.066055045" vertical-offset="0" max-vertical-offset="545">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analyze.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/analyze.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="26" selection-start="255" selection-end="255" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="342">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/_basic_frame_emoticon.html" />
         <option value="$PROJECT_DIR$/templates/facebook.html" />
         <option value="$PROJECT_DIR$/templates/profile_disclosure.html" />
         <option value="$PROJECT_DIR$/templates/twitter/profile_disclosure.html" />
@@ -150,12 +138,13 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/contact.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/nlp_functions.py" />
         <option value="$PROJECT_DIR$/twitter_functions.py" />
         <option value="$PROJECT_DIR$/templates/results.html" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -223,6 +212,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile_disclosure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile_disclosure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -234,8 +237,8 @@
     <property name="last_opened_file_path" value="$USER_HOME$/PSI/misosy_utils" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -437,51 +440,10 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="50" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="3348">
-          <folding>
-            <element signature="e#47#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="45" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1710">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/twitter_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="151" column="0" selection-start="4602" selection-end="4602" vertical-scroll-proportion="0.0" vertical-offset="2718" max-vertical-offset="3366">
-          <folding>
-            <element signature="e#47#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="45" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1710">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="0" selection-start="4602" selection-end="4602" vertical-scroll-proportion="0.0" vertical-offset="2718" max-vertical-offset="3366">
-          <folding>
-            <element signature="e#47#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -492,69 +454,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="396">
+        <state line="13" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="0" selection-end="143" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="234">
+        <state line="7" column="0" selection-start="0" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="234">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="15" selection-start="63" selection-end="63" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="342">
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#1;n#!!top" expanded="true" />
-            <marker date="1405741334182" expanded="true" signature="227:370" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nlp_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="47" selection-start="2960" selection-end="2961" vertical-scroll-proportion="-6.703704" vertical-offset="971" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="19" selection-start="4330" selection-end="4330" vertical-scroll-proportion="-2.1851852" vertical-offset="2317" max-vertical-offset="2862">
-          <folding>
-            <element signature="e#47#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="93" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="954">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="0" selection-end="238" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="342">
+        <state line="2" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="414">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.13211009" vertical-offset="0" max-vertical-offset="545">
+        <state line="6" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.19816513" vertical-offset="0" max-vertical-offset="545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="18" selection-start="0" selection-end="238" vertical-scroll-proportion="0.12653778" vertical-offset="0" max-vertical-offset="569">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="27" selection-start="3828" selection-end="3828" vertical-scroll-proportion="0.0" vertical-offset="1620" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="503" selection-end="503" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/Flask-0.10.1-py2.7.egg/flask/globals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.7885906" vertical-offset="286" max-vertical-offset="882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/account_info.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/scoping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="8" selection-start="3739" selection-end="3739" vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="3222">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="13" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="549" selection-end="549" vertical-scroll-proportion="5.8846154" vertical-offset="648" max-vertical-offset="3510">
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/analyze.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="255" selection-end="255" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="342">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="60" selection-end="60" vertical-scroll-proportion="0.066055045" vertical-offset="0" max-vertical-offset="545">
           <folding />
         </state>
       </provider>

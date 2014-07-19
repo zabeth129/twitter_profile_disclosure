@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+  {% if message %}
+  <h3 style="color:red;">Twitter IDを入力してください</ID></h3>
+  {% else %}
+  <h3 style="color:black;">Twitter IDを入力してください</ID></h3>
+  {% endif %}
+  <form method="post">
+    <h4>{{ form.screen_name }}</h4>
+    <button type="submit" class="btn btn-default" value="analyze" name="execute">分析開始！！</button>
+  </form>
+
+{% endblock %}
