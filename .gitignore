@@ -1,2 +1,4 @@
 config/account_info.yml
+config/database.yml
 wiki.dic
+db/
