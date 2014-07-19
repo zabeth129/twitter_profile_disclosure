@@ -57,16 +57,16 @@ def calc_tf_idf(docs):
     total_words = del_stopwords(total_words)
     docs = [doc for doc in docs.values()]  #TextCollectionに適切な形に変換
     collection = TextCollection(docs)
-    word_types = set(total_words)
+    words = set(total_words)
 
     results = []
     tf_idf = {}
-    for word_type in word_types:
+    for word in words:
         #tf = collection.tf(word_type, total_words)
         #idf = collection.idf(word_type, total_words)
         #tf_idf = collection.tf_idf(word_type, total_words)
         #results.append([word_type, tf, idf, tf_idf])
-        tf_idf[word_type] = collection.tf_idf(word_type, total_words)
+        tf_idf[word] = collection.tf_idf(word, total_words)
     #return sorted(results, key=lambda result:result[3], reverse=True), each_friend_words
     return tf_idf, each_friend_words
 
