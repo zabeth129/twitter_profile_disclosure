@@ -54,7 +54,7 @@ def calc_tf_idf(docs):
         for word in words_en:
             total_words.append(word)
             each_friend_words[name].append(word)  # スクリーンネームはutf-8に揃える
-    total_words = del_stopwords(total_words)
+    #total_words = del_stopwords(total_words)
     docs = [doc for doc in docs.values()]  #TextCollectionに適切な形に変換
     collection = TextCollection(docs)
     words = set(total_words)

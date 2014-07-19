@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c9234c5-fb45-4112-8ccc-56431e78bec2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tweet.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twitter_functions.py" afterPath="$PROJECT_DIR$/twitter_functions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp_functions.py" afterPath="$PROJECT_DIR$/nlp_functions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="profile_disclosure.iws" />
@@ -31,8 +32,21 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="224" selection-end="224" vertical-scroll-proportion="0.33088234" vertical-offset="0" max-vertical-offset="3798">
-              <folding />
+            <state line="45" column="4" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.103846155" vertical-offset="756" max-vertical-offset="3762">
+              <folding>
+                <element signature="e#47#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tweet.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tweet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="181" column="0" selection-start="6017" selection-end="6017" vertical-scroll-proportion="-129.6" vertical-offset="18" max-vertical-offset="3366">
+              <folding>
+                <element signature="e#0#94#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,7 +63,16 @@
       <file leaf-file-name="twitter_functions.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/twitter_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="22" selection-start="432" selection-end="432" vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="2808">
+            <state line="24" column="28" selection-start="700" selection-end="700" vertical-scroll-proportion="18.884615" vertical-offset="1360" max-vertical-offset="2808">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nlp_functions.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nlp_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="37" selection-start="2435" selection-end="2435" vertical-scroll-proportion="-2.2884614" vertical-offset="799" max-vertical-offset="3420">
               <folding />
             </state>
           </provider>
@@ -64,19 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nlp_functions.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nlp_functions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="27" selection-start="3828" selection-end="3828" vertical-scroll-proportion="-5.04" vertical-offset="1620" max-vertical-offset="3420">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="97" selection-start="412" selection-end="412" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="396">
+            <state line="3" column="6" selection-start="70" selection-end="70" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -85,7 +99,16 @@
       <file leaf-file-name="analyze.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/analyze.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="54" selection-end="54" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="342">
+            <state line="13" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="342">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account_info.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/account_info.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="19" selection-start="44" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
               <folding />
             </state>
           </provider>
@@ -109,8 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/facebook.html" />
-        <option value="$PROJECT_DIR$/templates/profile_disclosure.html" />
         <option value="$PROJECT_DIR$/templates/twitter/profile_disclosure.html" />
         <option value="$PROJECT_DIR$/templates/twitter/tweets_counter.html" />
         <option value="$PROJECT_DIR$/templates/_basic_frame.html" />
@@ -118,18 +139,20 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/contact.html" />
-        <option value="$PROJECT_DIR$/nlp_functions.py" />
         <option value="$PROJECT_DIR$/templates/results.html" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/tweet.py" />
         <option value="$PROJECT_DIR$/twitter_functions.py" />
+        <option value="$PROJECT_DIR$/nlp_functions.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/config/account_info.yml" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1424" />
+    <option name="x" value="64" />
     <option name="y" value="-4" />
     <option name="width" value="1297" />
     <option name="height" value="773" />
@@ -214,7 +237,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="terminal" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PSI/misosy_utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flask-oauth/example" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -386,7 +409,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1424" y="-4" width="1297" height="773" extended-state="6" />
+    <frame x="64" y="-4" width="1297" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -420,13 +443,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="0" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="234">
@@ -476,16 +492,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/account_info.yml">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/flask_oauth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="65" selection-start="88" selection-end="133" vertical-scroll-proportion="0.09262436" vertical-offset="0" max-vertical-offset="583">
+        <state line="292" column="19" selection-start="11199" selection-end="11199" vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="7812">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/twitter_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="22" selection-start="432" selection-end="432" vertical-scroll-proportion="-9.36" vertical-offset="0" max-vertical-offset="2808">
+        <state line="24" column="28" selection-start="700" selection-end="700" vertical-scroll-proportion="18.884615" vertical-offset="1360" max-vertical-offset="2808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="37" selection-start="2435" selection-end="2435" vertical-scroll-proportion="-2.2884614" vertical-offset="799" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tweet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="0" selection-start="6017" selection-end="6017" vertical-scroll-proportion="-129.6" vertical-offset="18" max-vertical-offset="3366">
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="6" selection-start="70" selection-end="70" vertical-scroll-proportion="-2.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/analyze.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="342">
           <folding />
         </state>
       </provider>
@@ -497,38 +543,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nlp_functions.py">
+    <entry file="file://$PROJECT_DIR$/config/account_info.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="27" selection-start="3828" selection-end="3828" vertical-scroll-proportion="-5.04" vertical-offset="1620" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="97" selection-start="412" selection-end="412" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/analyze.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="54" selection-end="54" vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="342">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/flask_oauth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="19" selection-start="11199" selection-end="11199" vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="7812">
+        <state line="2" column="19" selection-start="44" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="224" selection-end="224" vertical-scroll-proportion="0.33088234" vertical-offset="0" max-vertical-offset="3798">
-          <folding />
+        <state line="45" column="4" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.103846155" vertical-offset="756" max-vertical-offset="3762">
+          <folding>
+            <element signature="e#47#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

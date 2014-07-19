@@ -1,14 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 {% if g.user %}
-    <p>
-      Hello {{ g.user.name }}!  Wanna tweet something?
-    <form action="{{ url_for('tweet') }}"  method=post>
-      <p>
-        <input type=text name=tweet size=40>
-        <input type=submit value="Tweet!">
-    </form>
-
+      Hello {{ g.user.screen_name }}!  Wanna tweet something?
   {% else %}
     <p>
     <a href="{{ url_for('login') }}" alt="sign in"><button class="btn btn-default">使ってみる</button></a>

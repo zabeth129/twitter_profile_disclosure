@@ -1,23 +1,12 @@
-# -*- coding: utf-8 -*-
-__author__ = 'masaru'
+from flask import Flask, request, redirect, url_for, session, flash, g, \
+     render_template
+from flask_oauth import OAuth
 
-import sys
-import yaml
-import twitter_functions as twi_func
-
-from flask import Flask, request, render_template, session,\
-    url_for, flash, redirect, g
-from flask_wtf import Form
-from wtforms import TextField
-from wtforms.validators import Required
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from flask_oauth import OAuth
 
-sys.path.append('/template')
-DATABASE_CONFIG_FILE = "config/database.yml"
-TWITTER_APPLICATION_CONFIG_FILE = "config/account_info.yml"
+# configuration
 SECRET_KEY = 'development key'
 DEBUG = True
 
@@ -27,8 +16,7 @@ app.debug = DEBUG
 app.secret_key = SECRET_KEY
 oauth = OAuth()
 
-# Set Twitter authentication information
-application_info = yaml.load(open(TWITTER_APPLICATION_CONFIG_FILE, 'r'))
+# Use Twitter as example remote application
 twitter = oauth.remote_app('twitter',
     # unless absolute urls are used to make requests, this will be added
     # before all URLs.  This is also true for request_token_url and others.
@@ -43,19 +31,12 @@ twitter = oauth.remote_app('twitter',
     # user interface on the twitter side.
     authorize_url='https://api.twitter.com/oauth/authenticate',
     # the consumer keys from the twitter application registry.
-    consumer_key=application_info["account_info"]["twitter"]["consumer_key"],
-    consumer_secret=application_info["account_info"]["twitter"]["consumer_key"]
-
-)
-# DB set up
-database_info = yaml.load(open(DATABASE_CONFIG_FILE, 'r'))
-DATABASE_URI = 'mysql://{}:{}@{}/{}?charset=utf8'.format(
-    database_info["mysql"]["development"]["user"],
-    database_info["mysql"]["development"]["password"],
-    database_info["mysql"]["development"]['host'],
-    database_info["mysql"]["development"]["database"]
+    consumer_key='xBeXxg9lyElUgwZT6AZ0A',
+    consumer_secret='aawnSpNTOVuDCjx7HMh6uSXetjNN8zWLpZwCEU4LBrk'
 )
 
+# setup sqlalchemy
+DATABASE_URI = 'sqlite:////tmp/flask-oauth.db'
 engine = create_engine(DATABASE_URI)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
@@ -69,23 +50,14 @@ def init_db():
 
 
 class User(Base):
-    """
-    CREATE TABLE users (
-      user_id int(11) NOT NULL AUTO_INCREMENT,
-      screen_name varchar(255) DEFAULT NULL,
-      oauth_token varchar(255) DEFAULT NULL,
-      oauth_secret varchar(255) DEFAULT NULL,
-      PRIMARY KEY (user_id)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-    """
     __tablename__ = 'users'
     id = Column('user_id', Integer, primary_key=True)
-    screen_name = Column(String(60))
+    name = Column(String(60))
     oauth_token = Column(String(200))
     oauth_secret = Column(String(200))
 
-    def __init__(self, screen_name):
-        self.screen_name = screen_name
+    def __init__(self, name):
+        self.name = name
 
 
 @app.before_request
@@ -115,6 +87,39 @@ def get_twitter_token():
         return user.oauth_token, user.oauth_secret
 
 
+@app.route('/')
+def index():
+    tweets = None
+    if g.user is not None:
+        resp = twitter.get('statuses/home_timeline.json')
+        if resp.status == 200:
+            tweets = resp.data
+        else:
+            flash('Unable to load tweets from Twitter. Maybe out of '
+                  'API calls or Twitter is overloaded.')
+    return render_template('index.html', tweets=tweets)
+
+
+@app.route('/tweet', methods=['POST'])
+def tweet():
+    """Calls the remote twitter API to create a new status update."""
+    if g.user is None:
+        return redirect(url_for('login', next=request.url))
+    status = request.form['tweet']
+    if not status:
+        return redirect(url_for('index'))
+    resp = twitter.post('statuses/update.json', data={
+        'status':       status
+    })
+    if resp.status == 403:
+        flash('Your tweet was too long.')
+    elif resp.status == 401:
+        flash('Authorization error with Twitter.')
+    else:
+        flash('Successfully tweeted your tweet (ID: #%s)' % resp.data['id'])
+    return redirect(url_for('index'))
+
+
 @app.route('/login')
 def login():
     """Calling into authorize will cause the OpenID auth machinery to kick
@@ -128,7 +133,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
-    flash(u'You were signed out')
+    flash('You were signed out')
     return redirect(request.referrer or url_for('index'))
 
 
@@ -153,7 +158,7 @@ def oauth_authorized(resp):
         flash(u'You denied the request to sign in.')
         return redirect(next_url)
 
-    user = User.query.filter_by(screen_name=resp['screen_name']).first()
+    user = User.query.filter_by(name=resp['screen_name']).first()
 
     # user never signed on
     if user is None:
@@ -168,37 +173,9 @@ def oauth_authorized(resp):
     db_session.commit()
 
     session['user_id'] = user.id
-    flash(u'You were signed in')
+    flash('You were signed in')
     return redirect(next_url)
 
 
-class CreateForm(Form):
-    screen_name = TextField(u'Twitter ID', description=u'Twitter ID', validators=[Required()])
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
-@app.route('/contact')
-def contact():
-    twitter = '@ru_pe129'
-    email = 'massaru129[a]gmail.com'
-    return render_template('contact.html', twitter=twitter, email=email)
-
-
-@app.route('/analyze', methods=['GET', 'POST'])
-def analyze_profile():
-    form = CreateForm(csrf_enabled=False)
-    if request.method == 'POST' and form.validate():
-        results = twi_func.disclose_profile(api=api, screen_name=form.screen_name.data)
-        return render_template('results.html', results=results, screen_name=form.screen_name.data)
-    return render_template('index.html', form=form)
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=True)
+if __name__ == '__main__':
+    app.run()
