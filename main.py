@@ -8,6 +8,7 @@ import twitter_functions as twi_func
 
 from flask import Flask, request, render_template, session, url_for, flash, redirect, g
 from flask_wtf import Form
+
 from wtforms import TextField
 from wtforms.validators import Required
 from sqlalchemy import create_engine, Column, Integer, String
@@ -25,7 +26,7 @@ database_info = yaml.load(open(DATABASE_CONFIG_FILE, 'r'))
 DATABASE_URI = 'mysql://{}:{}@{}/{}?charset=utf-8'.format(
     database_info["mysql"]["development"]["user"],
     database_info["mysql"]["development"]["password"],
-    database_info["mysql"]["development"]['database'],
+    database_info["mysql"]["development"]['host'],
     database_info["mysql"]["development"]["database"]
 )
 engine = create_engine(DATABASE_URI)
@@ -35,23 +36,33 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 Base = declarative_base()
 Base.query = db_session.query_property()
 
-
-SECRET_KEY = 'development'
+SECRET_KEY = 'development key'
+DEBUG = True
 
 # Set Twitter authentication information
 application_info = yaml.load(open(TWITTER_APPLICATION_CONFIG_FILE, 'r'))
 oauth = OAuth()
 twitter = oauth.remote_app('twitter',
+    # unless absolute urls are used to make requests, this will be added
+    # before all URLs.  This is also true for request_token_url and others.
     base_url='https://api.twitter.com/1/',
+    # where flask should look for new request tokens
     request_token_url='https://api.twitter.com/oauth/request_token',
+    # where flask should exchange the token with the remote application
     access_token_url='https://api.twitter.com/oauth/access_token',
+    # twitter knows two authorizatiom URLs.  /authorize and /authenticate.
+    # they mostly work the same, but for sign on /authenticate is
+    # expected because this will give the user a slightly different
+    # user interface on the twitter side.
     authorize_url='https://api.twitter.com/oauth/authenticate',
-    consumer_key=application_info['account_info']['twitter']['consumer_key'],
-    consumer_secret=application_info['account_info']['twitter']['consumer_secret']
+    # the consumer keys from the twitter application registry.
+    consumer_key='iF0A5wqzvAYnjAPazAYGCA',
+    consumer_secret='zORk04dxWVqIiFxflcUSBNV9w16Cqg5oN3h4YB0PWs'
 )
 
 # setup flask
 app = Flask(__name__)
+app.debug = DEBUG
 app.secret_key = SECRET_KEY
 
 
@@ -119,7 +130,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
-    flash('You were signed out')
+    flash(u'You were signed out')
     return redirect(request.referrer or url_for('index'))
 
 
@@ -139,7 +150,7 @@ def oauth_authorized(resp):
     the application submitted.  Note that Twitter itself does not really
     redirect back unless the user clicks on the application name.
     """
-    next_url = request.args.get('next') or url_for('analyze_profile')
+    next_url = request.args.get('next') or url_for('index')
     if resp is None:
         flash(u'You denied the request to sign in.')
         return redirect(next_url)
@@ -167,6 +178,11 @@ class CreateForm(Form):
     screen_name = TextField(u'Twitter ID', description=u'Twitter ID', validators=[Required()])
 
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -179,7 +195,7 @@ def contact():
     return render_template('contact.html', twitter=twitter, email=email)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/analyze', methods=['GET', 'POST'])
 def analyze_profile():
     form = CreateForm(csrf_enabled=False)
     if request.method == 'POST' and form.validate():

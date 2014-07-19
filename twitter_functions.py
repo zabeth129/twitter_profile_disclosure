@@ -10,7 +10,7 @@ from nlp_functions import calc_tf_idf
 twitter_config_file = "config/account_info.yml"
 
 
-def authentication():
+def authentication(access_key=None, access_secret=None):
     strings = open(twitter_config_file).read()
     info = yaml.load(strings)
     info = info['account_info']['twitter']
